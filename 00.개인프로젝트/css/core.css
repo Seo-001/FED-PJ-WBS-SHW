@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/* 웹폰트, 공용클래스 */
+
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+
+/* header -> font-family: 'Overlock', cursive; */
+
+.top {
+    font-family: 'Overlock', sans-serif;
+}
+
+.ibx {
+    max-width: 1200px;
+    /* 1200 보다 auto로 가로크기가 전환되어 가로스크롤이 안생기게 됨! */
+    margin: 0 auto;
+}
+/* 글자 숨김 클래스(IR배경이미지 설명 등  숨기기) */
+.ir {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}

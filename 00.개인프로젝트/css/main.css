@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+.start {
+    display: flex;
+    height: calc(100vh - 76px);
+}
+.abc {
+  display: inline-block;
+}
+.abc img {
+    width: 100%;
+}
+
+.yuja {
+  display: inline-block;
+}
