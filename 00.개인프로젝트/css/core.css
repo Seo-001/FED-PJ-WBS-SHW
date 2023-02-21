@@ -1,15 +1,31 @@
 @charset "utf-8";
 
-/* 웹폰트, 공용클래스 */
+/* 웹폰트, 공용클래스 , 레이아웃*/
 
 @import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
 
 /* header -> font-family: 'Overlock', cursive; */
 
+/* 전체 페이지 보이는 화면 기준  */
+/* 전체 레이아웃 */
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
 .top {
     font-family: 'Overlock', sans-serif;
 }
 
+/* 2. 메인 영역  레이아웃  */
+
+.cont {
+    height: calc(100vh - 77px);
+    margin: 0 auto;
+}
+
+/* 레이아웃  */
 .ibx {
     max-width: 1200px;
     /* 1200 보다 auto로 가로크기가 전환되어 가로스크롤이 안생기게 됨! */
