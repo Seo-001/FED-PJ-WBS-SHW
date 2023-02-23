@@ -14,15 +14,44 @@
 }
 
 .abc {
-    background: url(../img/ABC쥬스.jpg) no-repeat top/50vw 100%;
+    background: url(../img/ABC쥬스.jpg) no-repeat top/100% 100%;
 }
 
 .yuja {
-    background: url(../img/yuja.jpg) no-repeat top/50vw 100%;
+    background: url(../img/yujabanana.jpg) no-repeat top/100% 100%;
 }
 
-/* 여기서부터 */
-.cont .bga {
+.bga {
     height: 100vh;
     background: #ee6518 100%;
+}
+
+.bgb {
+    height: 100vh;
+    background: #fbcc1b 100%;
+}
+
+.bgc {
+    height: 100vh;
+    background: #f0edcc 100%;
+}
+.bgcp {
+    height: 300vh;
+    background: #f0edcc 100%;
+}
+
+.bgcp img {
+    width: 20%;
+}
+
+.bgct {
+    height: 100vh;
+    background: #02343f 100%;
+}
+
+.bgct h4 {
+    font-size: 10vh;
+}
+.bgct p {
+    font-size: 8vh;
 }
