@@ -1,0 +1,9 @@
+core.css
+
+footer .foot {
+    flex: 1;
+    /* max-width: 1200px; */
+    /* 질문 
+    플렉스 1이라고 한 곳에 max-width 효과 가 있나요? */
+} 
+
