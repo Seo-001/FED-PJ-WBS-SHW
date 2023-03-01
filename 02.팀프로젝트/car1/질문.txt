@@ -1,0 +1,20 @@
+
+
+1. <section class="cont">
+                        <!-- 문이 열리는 애니메이션 -->
+                        <div class="poster">
+                            <div class="carposter car1">
+                                <div class="handle">
+main.css
+왜 손잡이가 안보이는가? 
+
+2. main.css
+
+/* 질문  */
+/* .sc1 h2::before:hover 
+가상요소에는 hover 하면 안되는가? 자식이라서 그런가?
+*/
+h2:hover::before {
+    transform: translateX(-50px);
+    color: red;
+}
