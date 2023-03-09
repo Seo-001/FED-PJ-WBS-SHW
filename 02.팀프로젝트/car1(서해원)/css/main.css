@@ -7,11 +7,13 @@
 @import url(fonts.css);
 
 body {
-    font-family: brandon-grotesque, sans-serif;
+    font-family: intrepid, sans-serif;
 }
 
 .cont {
     height: calc(100vh - 136px);
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 /* 스크롤바 */
@@ -38,8 +40,9 @@ body {
 
 h2 {
     display: inline-block;
-    padding: 20px;
+    padding: 40px;
     transition: scale 2s ease-in-out;
+    font-size: 2.4rem;
 }
 
 h2:hover {
@@ -47,12 +50,12 @@ h2:hover {
 }
 
 h2::before {
-    content: '\f1b9';
+    content: "\f1b9";
     display: inline-block;
     padding-right: 10px;
-    font-family: 'Font Awesome 6 Free';
+    font-family: "Font Awesome 6 Free";
     font-weight: 900;
-    transition: 1s ease-out;
+    transition: 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 /* 질문2  */
@@ -73,15 +76,17 @@ main .title {
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 44px;
+    font-weight: 400;
     line-height: 50px;
     letter-spacing: 20px;
+    font-family: NeutraText-Book, sans-serif;
 }
 
 main .title span {
     display: inline-block;
-    transform: translate(-500%, -600%) rotateX(0deg);
+    transform: translate(-2000%, -2000%) rotateX(0deg);
+    overflow: hidden;
     /* 투명도 0 */
     opacity: 0;
 }
@@ -114,8 +119,6 @@ main .title span {
     }
 } /* tit2 키프레임 */
 
-
-
 main .poster {
     /* 질문1 */
     /* 원근법을 주석을 달아도 손잡이 안나옴  */
@@ -126,6 +129,7 @@ main .poster {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: stretch;
     background: url(../image/car1_movie_image.jpg) no-repeat center / 100% auto;
 }
 
@@ -187,6 +191,7 @@ main .poster {
 .sc1 {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
 }
 
 /* 예고편  */
@@ -196,7 +201,7 @@ main .poster {
 }
 
 .sc1 .play {
-    aspect-ratio: 1000 / 600;
+    aspect-ratio: 1000 / 500;
 }
 
 .play iframe {
@@ -212,7 +217,8 @@ main .poster {
 }
 .sc1 p {
     text-indent: 20px;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    line-height: 2.2rem;
     display: inline-block;
     text-align: left;
     padding: 0 50px;
@@ -223,10 +229,9 @@ main .poster {
 
 .sc2 .ani {
     margin: 0 auto;
-    width: 400px;
-    height: 120px;
-    background: url(../image/street.jpg) repeat-x;
-    background-size: auto 100%;
+    width: 800px;
+    height: 100px;
+    background: url(../image/street.jpg) repeat-x top/auto 100%;
     border: 4px ridge #2219c6;
     /* 애니메이션 : 이시이지 반방마 */
     animation: road 4s linear infinite;
@@ -235,17 +240,17 @@ main .poster {
 /* 스크린배경이동 키프레임 */
 @keyframes road {
     to {
-        background-position: -400px 0;
+        background-position: -1000px 0;
     }
 }
 
 .sc2 i {
-    margin-top: 36px;
-    font-family: 'Font Awesome 6 Free';
+    margin-top: 20px;
+    font-family: "Font Awesome 6 Free";
     font-size: 50px;
     color: blue;
     transform: translateX(20px);
-    animation: car1 1s linear, car2 2s ease-out infinite;
+    animation: car1 2s linear, car2 2s ease-out infinite;
 }
 
 @keyframes car1 {
@@ -260,26 +265,23 @@ main .poster {
         color: blue;
     }
     50% {
-        transform: translateX(160px);
+        transform: translateX(360px);
         color: #fff;
     }
     100% {
-        transform: translateX(330px);
+        transform: translateX(660px);
         /* color: yellowgreen; */
         color: rgb(218, 12, 233);
     }
 }
 
-.chac {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
+.sc2 .chac {
+    margin: 10px 10px;
 }
 .sc2 img {
     display: inline-block;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     border: 1px solid rgb(14, 14, 14);
     box-shadow: 6px 6px 8px #e8ec0d;
@@ -287,6 +289,8 @@ main .poster {
 
 .sc2 h3 {
     display: inline-block;
+    font-size: 2rem;
+    font-weight: 500;
     vertical-align: 30px;
     padding-left: 40px;
     text-shadow: 0 0 4px #14c8f0;
@@ -301,35 +305,92 @@ main .poster {
 
 .sc2 p {
     text-indent: 20px;
-}
-.cibx {
-    width: 96%;
-    text-align: left;
-    word-break: keep-all;
+    font-size: 1rem;
+    line-height: 1rem;
+    margin: 10px;
 }
 
 /* 다각형 애니  성우소개 */
 
 /* 2-4. 성우 소개 */
-.sc3 {
-    position: relative;
-    /*     perspective: 5/*  */
-}
 
 :root {
     --csz: 25vw;
 }
 
+/* 큐브애니메이션  레이아웃 */
+article.cube {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* 2-4-1. 메뉴버튼  */
+.actor {
+    text-align: left;
+    box-sizing: border-box;
+}
+.actor ul {
+    width: 100%;
+}
+
+.actor li a {
+    color: #222;
+    font-style: italic;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 50px;
+    text-shadow: 1px 1px 2px rgba(255, 115, 0, 0.908);
+    background-image: linear-gradient(to bottom, transparent, rgba(225, 255, 0, 0.713), rgba(162, 255, 0, 0.713));
+}
+
+.actor .unli {
+    height: 4px;
+    width: 0%;
+    margin-left: 0%;
+    margin-bottom: 6px;
+    transition: all 1s ease-in-out;
+    background-color: #218408df;
+}
+
+.actor li:hover .unli {
+    width: 100%;
+    margin-left: 0%;
+    transition-property: width, margin-left;
+}
+
+/* 2-4-2 캐릭터 이미지 */
+.carchac {
+    width: 24%;
+    aspect-ratio: 1/0.8;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 2px 2px rgb(255, 174, 0);
+}
+
+.carchac img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
 /* 질문3 */
 /* 질문4 */
-/* 큐브 애니메이션  */
+/* 2-4-3 작동 큐브 애니  */
+.cube {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.sc3 .anicube {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .squ {
     perspective: 1000vw;
-
-    position: absolute;
-    top: calc(50% - var(--csz) / 2);
-    left: calc(70% - var(--csz) / 2);
-
     width: var(--csz);
     height: var(--csz);
 
@@ -394,79 +455,25 @@ main .poster {
 
 /* 캐릭터 나오기 */
 
-/*  2-4-2. 캐스팅 설명박스  */
+/*  2-4-3-1. 캐스팅 설명박스  */
 .squbx {
-    /* 부모? .squ */
-    position: absolute;
-    top: 66%;
-    left: 62%;
-    width: 16%;
+    width: 80%;
     height: 16%;
     /* 글자설정 */
-    color: rgb(255, 123, 0);
+    color: rgb(83, 212, 23);
     text-shadow: 0 0 2px #000;
 
     /* 처음에 투명하게 */
     opacity: 0;
-
-    background-color: rgba(0, 0, 0, 0.322);
+    margin: 0 auto;
+    background-color: rgba(149, 190, 53, 0.322);
     border-radius: 20%;
 }
 
 /* 종속 선택자  */
 article h3.cname {
-    line-height: 100px;
+    line-height: 60px;
     text-align: center;
-    font-size: 20px;
-}
-
-/* 2-4-3. 메뉴버튼  */
-.actor {
-    position: relative;
-    text-align: left;
-    box-sizing: border-box;
-    margin: 20px 40px;
-}
-.actor ul {
-    width: 20%;
-}
-
-.actor li a {
-    color: #222;
-    font-style: italic;
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 50px;
-    text-shadow: 1px 1px 2px rgba(255, 115, 0, 0.908);
-    background-image: linear-gradient(to bottom, transparent, rgba(225, 255, 0, 0.713), rgba(162, 255, 0, 0.713));
-}
-
-.actor .unli {
-    height: 2px;
-    width: 0%;
-    margin-left: 0%;
-    transition: all 1s ease-in-out;
-    background-color: #218408df;
-}
-
-.actor li:hover .unli {
-    width: 100%;
-    margin-left: 0%;
-    transition-property: width, margin-left;
-}
-.carchac {
-    box-sizing: border-box;
-    position: absolute;
-    top: 7%;
-    left: 22%;
-    width: 30%;
-    height: 116%;
-    border: 1px solid #000;
-    box-shadow: 2px 2px 2px 2px rgb(255, 174, 0);
-}
-
-.carchac img {
-    width: 100%;
-    height: 100%;
-    border: 1px solid #000;
+    font-size: 2.5rem;
+    font-weight: normal;
 }
