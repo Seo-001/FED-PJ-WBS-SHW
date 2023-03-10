@@ -6,30 +6,23 @@
 @import url(common.css);
 @import url(fonts.css);
 
+/* 푸터 */
 body {
+    overflow-x: hidden;
+    overflow-y: auto;
     font-family: intrepid, sans-serif;
 }
 
-.cont {
+.sc0 {
     height: calc(100vh - 136px);
-    max-width: 1920px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
-/* 스크롤바 */
-.scbar::-webkit-scrollbar {
-    /* 전체 스크롤바 크기변경 */
-    width: 8px;
-}
-.scbar::-webkit-scrollbar-thumb {
-    /* 스크롤바 */
-    background-color: #ddd;
-    border-radius: 5px;
-}
-.scbar::-webkit-scrollbar-track {
-    /* 스크롤바 트랙 배경 */
-    background-color: #555;
-    border-radius: 5px;
+.cont {
+    min-height: 800px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* 메인 공통 */
@@ -124,7 +117,7 @@ main .poster {
     /* 원근법을 주석을 달아도 손잡이 안나옴  */
     perspective: 1400px;
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
     position: relative;
     display: flex;
     flex-direction: row;
@@ -170,10 +163,6 @@ main .poster {
 /* 질문 */
 /* 손잡이 */
 .handle {
-    /* 부모 
-    main .poster {
-    position: relative;
-    */
     position: absolute;
     top: 50%;
     right: 10px;
@@ -188,23 +177,24 @@ main .poster {
 }
 
 /* 2-2. 줄거리 및 예고편  공통*/
+
+iframe {
+    margin: 0;
+    padding: 0;
+}
 .sc1 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    display: block;
 }
 
 /* 예고편  */
 
-.sc1 .carplayer {
-    flex: 1;
-}
-
 .sc1 .play {
-    aspect-ratio: 1000 / 500;
+    margin: 0 auto;
+    aspect-ratio: 1 / 0.4;
 }
 
 .play iframe {
+    margin: 0 auto;
     width: 100%;
     height: 100%;
     border: none;
@@ -212,17 +202,10 @@ main .poster {
 
 /* 줄거리 */
 
-.sc1 .story {
-    flex: 1;
-}
 .sc1 p {
     text-indent: 20px;
-    font-size: 2rem;
-    line-height: 2.2rem;
-    display: inline-block;
-    text-align: left;
-    padding: 0 50px;
-    word-break: keep-all;
+    font-size: 32px;
+    line-height: 40px;
 }
 
 /* 2-3. 캐릭터 소개  */
@@ -276,7 +259,7 @@ main .poster {
 }
 
 .sc2 .chac {
-    margin: 10px 10px;
+    margin-top: 10px;
 }
 .sc2 img {
     display: inline-block;
@@ -289,7 +272,7 @@ main .poster {
 
 .sc2 h3 {
     display: inline-block;
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 500;
     vertical-align: 30px;
     padding-left: 40px;
@@ -305,8 +288,8 @@ main .poster {
 
 .sc2 p {
     text-indent: 20px;
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: 16px;
+    line-height: 18px;
     margin: 10px;
 }
 
@@ -323,6 +306,7 @@ article.cube {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: flex-start;
 }
 
 /* 2-4-1. 메뉴버튼  */
@@ -330,30 +314,33 @@ article.cube {
     text-align: left;
     box-sizing: border-box;
 }
-.actor ul {
-    width: 100%;
+
+.actor li {
+    margin: 0 20px;
+    background-image: linear-gradient(to bottom, transparent, rgba(225, 255, 0, 0.713), rgba(162, 255, 0, 0.713));
 }
 
 .actor li a {
+    display: block;
     color: #222;
     font-style: italic;
     font-size: 25px;
     font-weight: 500;
     line-height: 50px;
     text-shadow: 1px 1px 2px rgba(255, 115, 0, 0.908);
-    background-image: linear-gradient(to bottom, transparent, rgba(225, 255, 0, 0.713), rgba(162, 255, 0, 0.713));
 }
 
-.actor .unli {
-    height: 4px;
+.actor > ul li::after {
+    content: "";
+    display: block;
+    height: 2px;
     width: 0%;
     margin-left: 0%;
-    margin-bottom: 6px;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-out;
     background-color: #218408df;
 }
 
-.actor li:hover .unli {
+.actor > ul > li:hover::after {
     width: 100%;
     margin-left: 0%;
     transition-property: width, margin-left;
@@ -377,17 +364,12 @@ article.cube {
 /* 질문3 */
 /* 질문4 */
 /* 2-4-3 작동 큐브 애니  */
-.cube {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
 
 .sc3 .anicube {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 .squ {
     perspective: 1000vw;
@@ -457,8 +439,8 @@ article.cube {
 
 /*  2-4-3-1. 캐스팅 설명박스  */
 .squbx {
-    width: 80%;
     height: 16%;
+
     /* 글자설정 */
     color: rgb(83, 212, 23);
     text-shadow: 0 0 2px #000;
@@ -472,8 +454,8 @@ article.cube {
 
 /* 종속 선택자  */
 article h3.cname {
-    line-height: 60px;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 40px;
     font-weight: normal;
+    margin: 0 10px;
 }
