@@ -164,3 +164,30 @@ media.css
 /* .ytp-cued-thumbnail-overlay-image {
     -webkit-background-size: contain;
 } */
+
+//////////////////////////////
+질문5-5 
+
+/* 그림이 원래는 가로 6000px 인데 
+위의 width가 800px 임  */
+그럴 때는 -800px 하면 되는가?ㄴ
+
+.sc2 .ani {
+    margin: 0 auto;
+    width: 800px;
+    height: 100px;
+    background: url(../car1_image/street.jpg) repeat-x top/auto 100%;
+    border: 4px ridge #2219c6;
+    /* 애니메이션 : 이시이지 반방마 */
+    animation: road 4s linear infinite;
+}
+
+/* 스크린배경이동 키프레임 */
+/*질문5-5*/
+/* 그림이 원래는 가로 6000px 인데 
+위의 width가 800px 임  */
+@keyframes road {
+    to {
+        background-position: -800px 0;
+    }
+}

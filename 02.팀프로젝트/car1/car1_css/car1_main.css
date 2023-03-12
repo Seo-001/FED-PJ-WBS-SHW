@@ -237,9 +237,12 @@ iframe {
 }
 
 /* 스크린배경이동 키프레임 */
+/*질문5-5*/
+/* 그림이 원래는 가로 6000px 인데 
+위의 width가 800px 임  */
 @keyframes road {
     to {
-        background-position: -1000px 0;
+        background-position: -800px 0;
     }
 }
 
