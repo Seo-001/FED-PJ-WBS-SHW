@@ -156,3 +156,11 @@ media.css
         width: 100%;
         padding: 0 5vw 5vh;
     }
+    
+
+///////////////////////////////////////////
+질문5-4 
+동영상 화면 어떻게 조절 하는가?
+/* .ytp-cued-thumbnail-overlay-image {
+    -webkit-background-size: contain;
+} */
