@@ -8,18 +8,56 @@
         <link rel="shortcut icon" type="image/x-icon" href="./image/favicon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <link rel="stylesheet" href= https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css>
-        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./car1_css/car1_main.css" />
         <link rel="stylesheet" href="./css/media.css" />
-        <script src="./js/main.js"></script>
+        <script src="./car1_js/nav.js"></script>
+        <script src="./car1_js/main.js"></script>
     </head>
-    <body class="scbar">
+    <body>
         <!-- A. 상단 -->
         <header id="top">
             <!-- 1.페이지 타이틀 -->
             <div class="top">
                 <a href="index.html">
-                    <img class="tit" src="image/logo.png" alt="Cars 로고 타이틀" />
+                    <img class="tit" src="car1_image/logo.png" alt="Cars 로고 타이틀" />
                 </a>
+                <div class="btn_con">
+                    <a href="#" onclick="nav();"> MENU </a>
+                </div>
+                <div id="nav_bg" onclick="nav();">
+                    <nav id="nav">
+                        <div class="contents_con">
+                            <div class="left_con left_nav" onclick="nav();"></div>
+                            <div class="right_con right_nav">
+                                <div class="contents_con">
+                                    <div class="close_btn">
+                                        <a href="#" onclick="nav();"> CLOSE </a>
+                                    </div>
+
+                                    <div class="list_con">
+                                        <ul>
+                                            <li>
+                                                <a href="car1.html"> Season 1 </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="season2.html"> Season 2 </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="season3.html"> Season 3 </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="characters.html"> Characters </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </header>
 
@@ -32,12 +70,12 @@
                     <div class="poster">
                         <h1 class="title"></h1>
                         <div class="carposter car1">
-                            <!-- 질문 -->
+                            <!-- 질문1_car1_html -->
                             <div class="handle"></div>
-                            <img src="./image/1_car1_poster.jpg" alt="car1 포스터" />
+                            <img src="./car1_image/1_car1_poster.jpg" alt="car1 포스터" />
                         </div>
                         <div class="carposter car2">
-                            <img src="./image/2_car1_poster.jpg" alt="car1 포스터" />
+                            <img src="./car1_image/2_car1_poster.jpg" alt="car1 포스터" />
                             <div class="handle"></div>
                         </div>
                     </div>
@@ -83,7 +121,7 @@
 
                     <div class="chac">
                         <div class="chac1 cibx">
-                            <img src="./image/movie_image (mc).jpg" alt="Lightning McQueen 캐릭터" />
+                            <img src="./car1_image/movie_image (mc).jpg" alt="Lightning McQueen 캐릭터" />
                             <h3>Lightning McQueen</h3>
                             <div class="des">
                                 <p>
@@ -96,7 +134,7 @@
                             </div>
                         </div>
                         <div class="chac2 cibx">
-                            <img src="./image/movie_image (m).jpg" alt="Mater캐릭터" />
+                            <img src="./car1_image/movie_image (m).jpg" alt="Mater캐릭터" />
                             <h3>Mater</h3>
                             <div class="des">
                                 <p>
@@ -108,7 +146,7 @@
                             </div>
                         </div>
                         <div class="chac3 cibx">
-                            <img src="./image/movie_image (D).jpg" alt="Doc Hudson 캐릭터" />
+                            <img src="./car1_image/movie_image (D).jpg" alt="Doc Hudson 캐릭터" />
                             <h3>Doc Hudson</h3>
                             <div class="des">
                                 <p>
@@ -164,12 +202,9 @@
                                 <li><!-- 4. Bonnie Hunt --></li>
                                 <li><!-- 5. Michael Keaton --></li>
                             </ol>
-                            <!-- 2-4-3-1. 캐스팅 설명박스  -->
+                            <!-- 2-4-3. 캐스팅 설명박스  -->
                             <div class="squbx">
                                 <h3 class="cname"></h3>
-                                <article class="ctxt">
-                                    <h3 class="cname"></h3>
-                                </article>
                             </div>
                         </div>
                     </article>
@@ -181,7 +216,7 @@
         <footer id="info">
             <div class="info">
                 <div class="copyLogo">
-                    <img src="image/prd_logo.png" alt="제작사로고" />
+                    <img src="car1_image/prd_logo.png" alt="제작사로고" />
                 </div>
 
                 <address>&copy; 1986 &#126; 2021 DISNEY &amp; PIXAR</address>

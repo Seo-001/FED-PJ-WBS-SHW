@@ -1,0 +1,66 @@
+질문 6-1 6-2
+
+
+ 자바스크립트 main.js
+ 대괄호가 되지 않는다.
+
+ const car1 = {
+        Start: {
+            배우: 'Start',
+            그림: 'https://movie-phinf.pstatic.net/20111223_15/1324587194472ANYeI_JPEG/movie_image.jpg?type=m665_443_2',
+        },
+        'Lightning McQueen': {
+            배우: 'Owen Wilson',
+            그림: 'https://movie-phinf.pstatic.net/20111223_295/13245872115067L0YP_JPEG/movie_image.jpg?type=m665_443_2',
+        },
+        'Tow Mater': {
+            배우: 'Larry The Cable Guy',
+            그림: 'https://movie-phinf.pstatic.net/20111223_269/13245872163772lFmf_JPEG/movie_image.jpg?type=m665_443_2',
+        },
+        'Doc Hudson': {
+            배우: 'Paul Newman',
+            그림: 'https://movie-phinf.pstatic.net/20111223_52/1324587214218kmhhV_JPEG/movie_image.jpg?type=m665_443_2',
+        },
+        'Sally Carrera': {
+            배우: 'Bonnie Hunt',
+            그림: 'https://movie-phinf.pstatic.net/20111223_286/1324587217476XfKzB_JPEG/movie_image.jpg?type=m665_443_2',
+        },
+        'Chick Hicks': {
+            배우: 'Michael Keaton',
+            그림: 'https://movie-phinf.pstatic.net/20111223_97/13245872120488WJk9_JPEG/movie_image.jpg?type=m665_443_2',
+        },
+    };
+
+ 
+
+
+
+    // 2. 메뉴에 클릭이벤트 설정하기
+    //  for of문
+    // 질문  6-1
+    // 왜 [ ] 가 아닌 점으로 하는가?
+    carchac.innerHTML = `<img src="${car1.Start.그림}" alt="Start의 포스터">`;
+
+/* 질문6-2 */
+            /* 객체인데, [] 대괄호가 되지 않는다. 그 이유는? */
+            // cname.innerText = data[배우];
+
+            /* 위의 let data가 아닌 car1[mtxt][배우]; 왜 안되는가?  */
+            /*  
+            cname.innerText = car1[mtxt][배우];이것도 안되는 이유는? */
+
+// 질문6-3 start 가 먼저 나와 있는 상태로 만들려고 하는데 왜 안되는가?
+    // cname.innerText = car1.Start.배우;
+
+
+질문7 글자를 하나씩 사라지게 할 수 있는가?
+-> 핵심이라도, 
+
+클래스를 하나더 추가 해보기도 함 
+클래스를 replace를 해보기도 함
+
+span 에 translate 이동이 안됨  
+-> js에서 innerHTML 로 넣은 태그들은  document.querySelectorAll 이 안되는가?
+-> 직접 html에 있는게 아니라서 그런건지,
+const span = document.querySelectorAll('span');
+이렇게 해서, forEach, for of 하기도 함 

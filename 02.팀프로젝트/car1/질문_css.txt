@@ -1,0 +1,158 @@
+
+
+
+질문1  원근법에 주석을 달아도 왜 손잡이가 안보이는가? 
+
+[질문1_car1_html]
+<section class="cont">
+                        <!-- 문이 열리는 애니메이션 -->
+                        <div class="poster">
+                            <div class="carposter car1">
+                                <div class="handle">
+
+
+
+<div class="carposter car1">  여기에 왜 width:0% 가 되면 이미지가 보이는가
+
+
+[질문1_2_car1_main.css]
+ 원근법에 주석을 달아도 왜 손잡이가 안보이는가? 
+
+main .poster {
+    /* 질문1_2 */
+    /* 원근법을 주석을 달아도 손잡이 안나옴  */
+    perspective: 1400px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    background: url(../car1_image/car1_movie_image.jpg) no-repeat center / 100% 100%;
+}
+
+/* 질문1_2 */
+/* 손잡이 */
+.handle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(3, 3, 3);
+}
+
+//////////////////////////////////////////////////////////////////////////
+
+ 질문2
+
+ca1_main.css
+
+부모요소영향없이, 가상요소에만 hover시에 변화를 주는게 가능한가?
+
+/* .sc1 h2::before:hover 
+가상요소에는 hover 하면 안되는가? 자식이라서 그런가?
+*/
+
+h2:hover::before {
+    transform: translateX(-50px);
+    color: red;
+}
+
+//////////////////////////////////////////
+
+
+
+
+질문3
+ol에 clip-path 주면 큐브가 아예 무너진다. 왜 그런지.. 
+그러나, lidp clip-path 를 주면 괜찮다 왜 그런지,,
+
+                            
+/* 질문3 */
+.squ {
+    perspective: 1000vw;
+
+    position: absolute;
+    top: calc(50% - var(--csz) / 2);
+    left: calc(50% - var(--csz) / 2);
+
+    width: var(--csz);
+    height: var(--csz);
+
+    transform-style: preserve-3d;
+
+    /* 클리핑 속성으로 만들기  */
+    /* 질문 */
+    /* 여기에 하면 안된다 큐브 다 날라간다.  */
+    /* clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);  */
+}
+
+/* 질문3 */
+.sc3 .squ li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+////////////////////////////////////////////
+
+
+질문4
+1-1_ ol class="squ",  ol에 포지션을 주고 li 에 안주면 안되는가? 
+1-2_ ol에 포지션 앱솔루트를 주니 왜 엉망이 되나?
+1_3_ li에 포지션 fix를 주어봤는데, 스크롤 올라갈때 따라오지 않음 왜그런가?
+
+코드
+html
+<!--2-4-1 다각형 애니 -->
+                        <div class="ani">
+                            <ol class="squ">
+                                <li><!-- 출발 --></li>
+                                <li><!-- 1. Lightning McQueen --></li>
+                                <li><!-- 2. Mater --></li>
+                                <li><!-- 3. Doc Hudson --></li>
+                                <li><!-- 4. Bonnie Hunt --></li>
+                                <li><!-- 5. Michael Keaton --></li>
+                            </ol>
+main.css
+
+////////////////////////////////////////////////////////////////////////
+
+
+/* 질문5 */
+li 1번째와 3번쨰 잔상이 남아 있음 
+잔상이 남아 있음
+
+질문5-1 
+.sc3 .squ li:nth-child(1) {
+    background: url(../car1_image/3_car1_poster.jpg) no-repeat center/ 100% 100%;
+
+    /* 화면방향(z축) */
+    transform: translateZ(calc(var(--chacsz) / 2));
+}
+
+질문5-2
+/* 왜 여기에서만 잔상이 남아 있는가?  */
+.sc3 .squ li:nth-child(3) {
+    background: url(../image/actor2.jpg) no-repeat center/ cover;
+    transform: rotateY(180deg) translateZ(calc(var(--chacsz) / 2));
+}
+
+////////////////////////////////////////////////
+ 
+
+질문5-3
+
+/*********************max-width: 850px********************** */
+width :100% 라면 빈공간 없이 꽉 채움 
+의미하는 바는?
+media.css 
+.sc3 .cube {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 100%;
+        padding: 0 5vw 5vh;
+    }
