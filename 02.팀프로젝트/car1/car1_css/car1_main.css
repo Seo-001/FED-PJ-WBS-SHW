@@ -87,14 +87,20 @@ main .title {
     line-height: 50px;
     letter-spacing: 20px;
     font-family: NeutraText-Book, sans-serif;
+    z-index: 200;
+    cursor: pointer;
 }
 
 main .title span {
     display: inline-block;
     transform: translate(-2000%, -2000%) rotateX(0deg);
-    overflow: hidden;
+    /* overflow: hidden; */
     /* 투명도 0 */
     opacity: 0;
+}
+main .title span b {
+    font-weight: normal;
+    display: inline-block;
 }
 
 /* 스테이지로 들어오기  */
@@ -107,6 +113,7 @@ main .title span {
     animation: tit1 1s cubic-bezier(0.39, 0.58, 0.57, 1) forwards 4s,
         tit2 1s cubic-bezier(0.6, -0.28, 0.74, 0.05) forwards 5s;
 }
+
 
 /* 글자 등장 키프레임 */
 
@@ -126,9 +133,6 @@ main .title span {
 } /* tit2 키프레임 */
 
 main .poster {
-    /* 질문1_2 */
-    /* 원근법을 주석을 달아도 손잡이 안나옴  */
-    /* perspective: 1400px; */
     height: 100%;
     position: relative;
     display: flex;
@@ -140,12 +144,20 @@ main .poster {
 /* 문이 열리는 애니메이션  */
 
 .car1 {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
     transform-origin: left;
 
     animation: opencar1 4s ease-out forwards;
 }
 
 .car2 {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
     transform-origin: right;
 
     animation: opencar2 4s ease-out forwards;
@@ -155,19 +167,36 @@ main .poster {
 
 @keyframes opencar1 {
     to {
-        transform: rotateY(-180deg);
+        transform: rotateY(-100deg);
     }
 } /* opencar1키프레임 */
 
 @keyframes opencar2 {
     to {
-        transform: rotateY(180deg);
+        transform: rotateY(100deg);
     }
 } /* opencar2키프레임 */
+.doorpart{
+    position: absolute;
+    top: 140px;
 
-.poster img {
+    width: 1400px;
+    height: calc(100vh - 140px);
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* 질문1_2 */
+    /* 원근법을 주석을 달아도 손잡이 안나옴  */
+    perspective: 1400px;
+
+    z-index: 105;
+    outline: 2px solid red;
+}
+
+.doorpart img {
+    width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 /* 질문1_2 */
@@ -184,6 +213,7 @@ main .poster {
 
 .car2 .handle {
     left: 10px;
+    right: auto;
 }
 
 /* 2-2. 줄거리 및 예고편  공통*/
@@ -391,7 +421,6 @@ article.cube {
 }
 /* 질문4 */
 .squ {
-    perspective: 1000vw;
     width: var(--chacsz);
     height: var(--chacsz);
     transform-style: preserve-3d;
@@ -402,9 +431,9 @@ article.cube {
     /* clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);   */
 }
 
-/* .sc3 .squ {
-    position: absolute;
-} */
+ .sc3 .squ {
+    /* position: absolute; */
+} 
 /* 질문4 */
 .sc3 .squ li {
     position: absolute;
@@ -414,7 +443,15 @@ main .poster{
 
     width: 100%;
     height: 100%;
+}
+.sc3 .squ li::before    {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
     clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+
+
 }
 
 /* 질문5 */
@@ -422,43 +459,72 @@ main .poster{
 /* 질문5-1 */
 /* 앞면 카1 포스터 */
 .sc3 .squ li:nth-child(1) {
-    background: url(../car1_image/3_car1_poster.jpg) no-repeat center/ 100% 100%;
-
     /* 화면방향(z축) */
     transform: translateZ(calc(var(--chacsz) / 2));
 }
 
+.sc3 .squ li:nth-child(1)::before {
+    background: url(../car1_image/3_car1_poster.jpg) no-repeat center/ 100% 100%;
+
+}
+
+
 /* 오른면 Lightning McQueen */
 .sc3 .squ li:nth-child(2) {
-    background: url(../car1_image/actor1.jpg) no-repeat left top / 100% 100%;
 
     transform: rotateY(90deg) translateZ(calc(var(--chacsz) / 2));
 }
+
+.sc3 .squ li:nth-child(2)::before {
+    background: url(../car1_image/actor1.jpg) no-repeat left top / 100% 100%;
+
+}
+
 /* 뒷면 'Tow Mater' */
 /* 질문5-2 */
 /* 왜 여기에서만 잔상이 남아 있는가?  */
 .sc3 .squ li:nth-child(3) {
-    background: url(../car1_image/actor2.jpg) no-repeat center/ cover;
     transform: rotateY(180deg) translateZ(calc(var(--chacsz) / 2));
 }
 
+.sc3 .squ li:nth-child(3)::before {
+    background: url(../car1_image/actor2.jpg) no-repeat center/ cover;
+
+}
+
+
 /* 왼쪽 Doc Hudson*/
 .sc3 .squ li:nth-child(4) {
-    background: url(../car1_image/actor3.jpg) no-repeat center/ cover;
     transform: rotateY(-90deg) translateZ(calc(var(--chacsz) / 2));
 }
 
+.sc3 .squ li:nth-child(4)::before {
+    background: url(../car1_image/actor3.jpg) no-repeat center/ cover;
+
+}
+
+
 /* 윗면 Sally Carrera*/
 .sc3 .squ li:nth-child(5) {
-    background: url(../car1_image/actor4.jpg) no-repeat center/ cover;
 
     transform: rotateX(90deg) translateZ(calc(var(--chacsz) / 2));
 }
+
+.sc3 .squ li:nth-child(5)::before {
+    background: url(../car1_image/actor4.jpg) no-repeat center/ cover;
+
+}
+
 /* 아랫면 Chick Hicks */
 .sc3 .squ li:nth-child(6) {
-    background: url(../car1_image/actor5.jpg) no-repeat center/ cover;
     transform: rotateX(-90deg) translateZ(calc(var(--chacsz) / 2));
 }
+
+.sc3 .squ li:nth-child(6)::before {
+    background: url(../car1_image/actor5.jpg) no-repeat center/ cover;
+
+}
+
 
 /* 캐릭터 나오기 */
 

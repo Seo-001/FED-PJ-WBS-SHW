@@ -22,7 +22,7 @@ function loadFn() {
     for (let x of mytxt) {
         // 코드만들어 변수에 대입연산자로 넣기
         hcode += `<span style = "transition-delay:${idx * 1}s"
-        >${x}</span>`;
+        ><b>${x}</b></span>`;
 
         // 순번변수 증가
         idx++;
@@ -42,9 +42,15 @@ function loadFn() {
 
     title.title = `마지막에 글자가 멈추면 클릭하세요`;
 
+    const titSpan = title.querySelectorAll("span b");
+    console.log(titSpan);
+
     title.onclick = () => {
-        title.style.transform = `translate(-100%, -600%) rotateX(720deg)`;
-        title.style.transition = `.8s cubic-bezier(0.55, 0.09, 0.68, 0.53)`;
+        console.log("나야나!");
+        titSpan.forEach((ele,idx)=>{
+            ele.style.transform = `translate(-100%, -600%) rotateX(720deg)`;    
+            ele.style.transition = `.8s cubic-bezier(0.55, 0.09, 0.68, 0.53) ${idx*0.2}s`;
+        });
     };
 
     //////////////////CASTING 이벤트 주사위 돌리기 ///////////////////////
@@ -178,5 +184,9 @@ function loadFn() {
             }, 1000); ///////////////타임아웃
         }; /////click 이벤트 함수 //////////////
     } ///  for of 문//////////////
+
+    // 처음에 "Start"버튼 나와있기
+    menu[0].click();
+
 } ////////////////로드함수///////
 ////loadFn 함수/////////////////
