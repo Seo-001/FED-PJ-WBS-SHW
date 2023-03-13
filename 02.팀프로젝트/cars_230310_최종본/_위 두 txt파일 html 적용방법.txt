@@ -1,0 +1,28 @@
+이것은 햄버거태그를 각각 페이지에 어떻게 삽입해야 하는지 설명하는 글이다.
+
+
+1. _btn코드.txt를 열어 ctrl+a, ctrl+c를 눌러 복사한다.
+2. 복사한 코드를 div class="top" 아래 a태그의 바로 아래 형제가 될 수 있게 ctrl+v로 붙여넣기한다.
+3. _nav코드.txt를 열어 ctrl+a, ctrl+c를 눌러 복사한다.
+4. 복사한 코드를 header태그의 바로 아래 형제가 될 수 있게 ctrl+v로 붙여넣기한다.
+
+
+
+바로 아래 형제란?
+2번의 예시
+
+            <!-- 1.페이지 타이틀 -->
+            <div class="top">
+                <a href="index.html">
+                    <img class="tit" src="image/logo.png" alt="Cars 로고 타이틀">
+                </a>
+
+                <div class="btn_con">
+                    <a href="#" onclick="nav();">
+                        MENU
+                    </a>
+                </div>
+            </div>
+
+
+주의) 압축 파일에 있는 nav.js를 서브페이지 html에 추가할 것
